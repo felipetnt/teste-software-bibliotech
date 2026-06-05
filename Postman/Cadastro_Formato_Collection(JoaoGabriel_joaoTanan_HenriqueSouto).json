@@ -1,0 +1,401 @@
+{
+  "info": {
+    "_postman_id": "9aae8e07-83c2-4a31-8c5e-497b33fcb2cb",
+    "name": "BiblioTech",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53468565"
+  },
+  "item": [
+    {
+      "name": "TESTES DO JOÃO GUILHERME",
+      "item": [
+        {
+          "name": "Validação de Formato de E-mail (CT-006)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "let jsonData = {};",
+                  "try { jsonData = pm.response.json(); } catch (e) {}",
+                  "",
+                  "pm.test('Status code é 400', function () {",
+                  "    pm.response.to.have.status(400);",
+                  "});",
+                  "",
+                  "pm.test('Mensagem é Email inválido', function () {",
+                  "    pm.expect(jsonData.message).to.eql('Email inválido');",
+                  "});",
+                  "",
+                  "pm.test('Código de erro é EMAIL_INVALIDO', function () {",
+                  "    pm.expect(jsonData.codigo || jsonData.code || jsonData.erroCodigo).to.eql('EMAIL_INVALIDO');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"joaoemail.com\",\n  \"senha\": \"SenhaValida@123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/usuarios/cadastro",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "usuarios",
+                "cadastro"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filtro de Upload de Perfil (CT-007)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "let jsonData = {};",
+                  "try { jsonData = pm.response.json(); } catch (e) {}",
+                  "",
+                  "pm.test('Status code é 400', function () {",
+                  "    pm.response.to.have.status(400);",
+                  "});",
+                  "",
+                  "pm.test('Mensagem de erro é Extensão de arquivo não permitida', function () {",
+                  "    pm.expect(jsonData.message).to.eql('Extensão de arquivo não permitida');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"usuarioId\": \"12345\",\n  \"nomeArquivo\": \"script_malicioso.exe\",\n  \"tipoArquivo\": \"application/x-msdownload\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/usuarios/perfil/upload",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "usuarios",
+                "perfil",
+                "upload"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "TESTES DO JOÃO GABRIEL",
+      "item": [
+        {
+          "name": "Complexidade de Senha (CT-001)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "let jsonData = {};",
+                  "try { jsonData = pm.response.json(); } catch (e) {}",
+                  "",
+                  "pm.test('Status code é 400', function () {",
+                  "    pm.response.to.have.status(400);",
+                  "});",
+                  "",
+                  "pm.test('Mensagem de erro é Senha inválida', function () {",
+                  "    pm.expect(jsonData.message).to.eql('Senha inválida');",
+                  "});",
+                  "",
+                  "pm.test('Código de erro é SENHA_INVALIDA', function () {",
+                  "    pm.expect(jsonData.codigo || jsonData.code || jsonData.erroCodigo).to.eql('SENHA_INVALIDA');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"usuario@email.com\",\n  \"senha\": \"111\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/usuarios/cadastro",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "usuarios",
+                "cadastro"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Unicidade de E-mail / E-mail Duplicado (CT-002)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "let jsonData = {};",
+                  "try { jsonData = pm.response.json(); } catch (e) {}",
+                  "",
+                  "pm.test('Status code é 400 ou 409', function () {",
+                  "    pm.expect([400, 409]).to.include(pm.response.code);",
+                  "});",
+                  "",
+                  "pm.test('Mensagem de erro é E-mail já cadastrado', function () {",
+                  "    pm.expect(jsonData.message).to.eql('E-mail já cadastrado');",
+                  "});",
+                  "",
+                  "pm.test('Código de erro é EMAIL_DUPLICADO', function () {",
+                  "    pm.expect(jsonData.codigo || jsonData.code || jsonData.erroCodigo).to.eql('EMAIL_DUPLICADO');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"usuario_existente@email.com\",\n  \"senha\": \"SenhaValida@123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/usuarios/cadastro",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "usuarios",
+                "cadastro"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "TESTES DO SOUTO",
+      "item": [
+        {
+          "name": "Permissão de Acesso Parcial na Listagem (CT-033)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "let jsonData = null;",
+                  "try { jsonData = pm.response.json(); } catch (e) {}",
+                  "",
+                  "pm.test('Status code é 200', function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Resposta não contém campos ou ações restritas de administração', function () {",
+                  "    const forbiddenKeys = ['edit', 'delete', 'admin', 'canEdit', 'canDelete'];",
+                  "    const responseText = pm.response.text();",
+                  "    forbiddenKeys.forEach((key) => {",
+                  "        pm.expect(responseText).to.not.include('\"' + key + '\"');",
+                  "    });",
+                  "",
+                  "    if (jsonData) {",
+                  "        const serialized = JSON.stringify(jsonData);",
+                  "        forbiddenKeys.forEach((key) => {",
+                  "            pm.expect(serialized).to.not.include('\"' + key + '\"');",
+                  "        });",
+                  "    }",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-User-Role",
+                "value": "Leitor",
+                "disabled": false
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/acervo/livros",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "acervo",
+                "livros"
+              ]
+            },
+            "description": "Generated from cURL: curl --request GET 'http://localhost:8080/api/acervo/livros' --header 'X-User-Role: Leitor'"
+          },
+          "response": []
+        },
+        {
+          "name": "Bloqueio de Ação de Admin por Usuário Comum (CT-034)",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "X-User-Role",
+                "value": "Leitor",
+                "disabled": false
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/acervo/livros/123",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "acervo",
+                "livros",
+                "123"
+              ]
+            },
+            "description": "Generated from cURL: curl --request DELETE 'http://localhost:8080/api/acervo/livros/123' --header 'X-User-Role: Leitor'"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Cadastro com Sucesso",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "let jsonData = {};",
+              "try { jsonData = pm.response.json(); } catch (e) {}",
+              "",
+              "pm.test('Status code é 201', function () {",
+              "    pm.response.to.have.status(201);",
+              "});",
+              "",
+              "pm.test('Mensagem é Registrado com sucesso', function () {",
+              "    pm.expect(jsonData.message).to.eql('Registrado com sucesso');",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"sucesso@email.com\",\n  \"senha\": \"SenhaValida@123\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/usuarios/cadastro",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "usuarios",
+            "cadastro"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
