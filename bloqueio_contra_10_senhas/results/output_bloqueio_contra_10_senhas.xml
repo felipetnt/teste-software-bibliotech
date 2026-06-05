@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.5 on win32)" generated="2026-06-04T22:26:30.906358" rpa="false" schemaversion="5">
+<suite id="s1" name="Teste-Software-Bibliotech" source="D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech">
+<suite id="s1-s1" name="Bloqueio Contra 10 Senhas" source="D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech\bloqueio_contra_10_senhas">
+<suite id="s1-s1-s1" name="bloqueio conta 10 tentativas JoaoGabriel" source="D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech\bloqueio_contra_10_senhas\bloqueio_conta_10_tentativas_JoaoGabriel.robot">
+<test id="s1-s1-s1-t1" name="CT16 - Validar Bloqueio Exato Na Decima Tentativa Incorreta" line="13">
+<kw name="Open Browser">
+<msg time="2026-06-04T22:26:31.029895" level="FAIL">No keyword with name 'Open Browser' found.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<status status="FAIL" start="2026-06-04T22:26:31.029219" elapsed="0.013854">No keyword with name 'Open Browser' found.</status>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Input Text">
+<arg>${INPUT_USER}</arg>
+<arg>pretao.alvo@email.com</arg>
+<status status="NOT RUN" start="2026-06-04T22:26:31.044344" elapsed="0.000540"/>
+</kw>
+<kw name="Input Password">
+<arg>${INPUT_PASS}</arg>
+<arg>SenhaIncorreta</arg>
+<status status="NOT RUN" start="2026-06-04T22:26:31.045462" elapsed="0.000572"/>
+</kw>
+<kw name="Click Button">
+<arg>${BTN_LOGIN}</arg>
+<status status="NOT RUN" start="2026-06-04T22:26:31.046650" elapsed="0.000523"/>
+</kw>
+<var name="${index}"/>
+<status status="NOT RUN" start="2026-06-04T22:26:31.044164" elapsed="0.003545"/>
+</iter>
+<var>${index}</var>
+<value>1</value>
+<value>11</value>
+<status status="NOT RUN" start="2026-06-04T22:26:31.043918" elapsed="0.003862"/>
+</for>
+<kw name="Wait Until Element Is Visible">
+<arg>${ALERT_BOX}</arg>
+<arg>timeout=3s</arg>
+<status status="NOT RUN" start="2026-06-04T22:26:31.048004" elapsed="0.000579"/>
+</kw>
+<kw name="Element Text Should Be">
+<arg>${ALERT_BOX}</arg>
+<arg>Conta bloqueada por excesso de tentativas.</arg>
+<status status="NOT RUN" start="2026-06-04T22:26:31.050026" elapsed="0.000964"/>
+</kw>
+<status status="FAIL" start="2026-06-04T22:26:31.025871" elapsed="0.026447">No keyword with name 'Open Browser' found.</status>
+</test>
+<kw name="Close Browser" type="TEARDOWN">
+<msg time="2026-06-04T22:26:31.061389" level="FAIL">No keyword with name 'Close Browser' found.</msg>
+<status status="FAIL" start="2026-06-04T22:26:31.060735" elapsed="0.004389">No keyword with name 'Close Browser' found.</status>
+</kw>
+<status status="FAIL" start="2026-06-04T22:26:30.973798" elapsed="0.092423">Suite teardown failed:
+No keyword with name 'Close Browser' found.</status>
+</suite>
+<status status="FAIL" start="2026-06-04T22:26:30.970296" elapsed="0.108380"/>
+</suite>
+<status status="FAIL" start="2026-06-04T22:26:30.913317" elapsed="0.167982"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Teste-Software-Bibliotech" id="s1" pass="0" fail="1" skip="0">Teste-Software-Bibliotech</stat>
+<stat name="Bloqueio Contra 10 Senhas" id="s1-s1" pass="0" fail="1" skip="0">Teste-Software-Bibliotech.Bloqueio Contra 10 Senhas</stat>
+<stat name="bloqueio conta 10 tentativas JoaoGabriel" id="s1-s1-s1" pass="0" fail="1" skip="0">Teste-Software-Bibliotech.Bloqueio Contra 10 Senhas.bloqueio conta 10 tentativas JoaoGabriel</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-06-04T22:26:30.976315" level="ERROR">Error in file 'D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech\bloqueio_contra_10_senhas\bloqueio_conta_10_tentativas_JoaoGabriel.robot' on line 2: Importing library 'SeleniumLibrary' failed: ModuleNotFoundError: No module named 'SeleniumLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech\lib
+  D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech\resources
+  c:\Users\jdeme\.vscode\extensions\d-biehl.robotcode-2.5.1\bundled\libs
+  c:\Users\jdeme\.vscode\extensions\d-biehl.robotcode-2.5.1\bundled\tool\robotcode
+  C:\python314\python314.zip
+  C:\python314\DLLs
+  C:\python314\Lib
+  C:\python314
+  C:\Users\jdeme\AppData\Roaming\Python\Python314\site-packages
+  C:\python314\Lib\site-packages</msg>
+</errors>
+</robot>
