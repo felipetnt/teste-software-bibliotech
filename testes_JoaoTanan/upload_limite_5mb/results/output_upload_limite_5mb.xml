@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.5 on win32)" generated="2026-06-05T17:02:22.576564" rpa="false" schemaversion="5">
+<suite id="s1" name="Teste-Software-Bibliotech" source="D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech">
+<suite id="s1-s1" name="Upload Limite 5Mb" source="D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech\upload_limite_5mb">
+<suite id="s1-s1-s1" name="Upload Limite 5Mb" source="D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech\upload_limite_5mb\upload_limite_5mb.robot">
+<test id="s1-s1-s1-t1" name="CT20 - Deve Rejeitar Upload Acima Da Borda De Cinco Megabytes" line="11">
+<kw name="Open Browser">
+<msg time="2026-06-05T17:02:22.634765" level="FAIL">No keyword with name 'Open Browser' found.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<status status="FAIL" start="2026-06-05T17:02:22.634128" elapsed="0.012420">No keyword with name 'Open Browser' found.</status>
+</kw>
+<kw name="Maximize Browser Window">
+<status status="NOT RUN" start="2026-06-05T17:02:22.647506" elapsed="0.000713"/>
+</kw>
+<kw name="Choose File">
+<arg>${INPUT_FILE}</arg>
+<arg>D:\\Faculdade\\Repositorios\\teste_software\\teste-software-bibliotech\\upload_limite_5mb/arquivo_5_1mb.jpg</arg>
+<status status="NOT RUN" start="2026-06-05T17:02:22.648985" elapsed="0.000546"/>
+</kw>
+<kw name="Wait Until Element Is Visible">
+<arg>${MSG_ERRO}</arg>
+<arg>timeout=3s</arg>
+<status status="NOT RUN" start="2026-06-05T17:02:22.650182" elapsed="0.000537"/>
+</kw>
+<kw name="Element Text Should Be">
+<arg>${MSG_ERRO}</arg>
+<arg>O arquivo excede o limite de 5MB.</arg>
+<status status="NOT RUN" start="2026-06-05T17:02:22.651335" elapsed="0.000578"/>
+</kw>
+<status status="FAIL" start="2026-06-05T17:02:22.631160" elapsed="0.021761">No keyword with name 'Open Browser' found.</status>
+</test>
+<kw name="Close Browser" type="TEARDOWN">
+<msg time="2026-06-05T17:02:22.660054" level="FAIL">No keyword with name 'Close Browser' found.</msg>
+<status status="FAIL" start="2026-06-05T17:02:22.659423" elapsed="0.003039">No keyword with name 'Close Browser' found.</status>
+</kw>
+<status status="FAIL" start="2026-06-05T17:02:22.621975" elapsed="0.041163">Suite teardown failed:
+No keyword with name 'Close Browser' found.</status>
+</suite>
+<status status="FAIL" start="2026-06-05T17:02:22.617279" elapsed="0.050345"/>
+</suite>
+<status status="FAIL" start="2026-06-05T17:02:22.581390" elapsed="0.088598"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Teste-Software-Bibliotech" id="s1" pass="0" fail="1" skip="0">Teste-Software-Bibliotech</stat>
+<stat name="Upload Limite 5Mb" id="s1-s1" pass="0" fail="1" skip="0">Teste-Software-Bibliotech.Upload Limite 5Mb</stat>
+<stat name="Upload Limite 5Mb" id="s1-s1-s1" pass="0" fail="1" skip="0">Teste-Software-Bibliotech.Upload Limite 5Mb.Upload Limite 5Mb</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-06-05T17:02:22.624626" level="ERROR">Error in file 'D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech\upload_limite_5mb\upload_limite_5mb.robot' on line 2: Importing library 'SeleniumLibrary' failed: ModuleNotFoundError: No module named 'SeleniumLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech\lib
+  D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech\resources
+  c:\Users\jdeme\.vscode\extensions\d-biehl.robotcode-2.5.1\bundled\libs
+  c:\Users\jdeme\.vscode\extensions\d-biehl.robotcode-2.5.1\bundled\tool\robotcode
+  C:\python314\python314.zip
+  C:\python314\DLLs
+  C:\python314\Lib
+  C:\python314
+  C:\Users\jdeme\AppData\Roaming\Python\Python314\site-packages
+  C:\python314\Lib\site-packages</msg>
+</errors>
+</robot>

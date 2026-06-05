@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.5 on win32)" generated="2026-06-05T17:03:45.403471" rpa="false" schemaversion="5">
+<suite id="s1" name="Teste-Software-Bibliotech" source="D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech">
+<suite id="s1-s1" name="Verificar Rate Limit" source="D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech\verificar_rate_limit">
+<suite id="s1-s1-s1" name="Verificar Rate Limit" source="D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech\verificar_rate_limit\verificar_rate_limit.robot">
+<test id="s1-s1-s1-t1" name="CT24 - Simular Disparos De Cliques Para Forçar Estouro De Limite" line="10">
+<kw name="Open Browser">
+<msg time="2026-06-05T17:03:45.470368" level="FAIL">No keyword with name 'Open Browser' found.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<status status="FAIL" start="2026-06-05T17:03:45.469618" elapsed="0.013815">No keyword with name 'Open Browser' found.</status>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Click Button">
+<arg>${BTN_SUBMIT}</arg>
+<status status="NOT RUN" start="2026-06-05T17:03:45.484872" elapsed="0.000587"/>
+</kw>
+<var name="${i}"/>
+<status status="NOT RUN" start="2026-06-05T17:03:45.484661" elapsed="0.001368"/>
+</iter>
+<var>${i}</var>
+<value>1</value>
+<value>102</value>
+<status status="NOT RUN" start="2026-06-05T17:03:45.484417" elapsed="0.001684"/>
+</for>
+<kw name="Page Should Contain">
+<arg>Muitas requisições. Tente novamente mais tarde.</arg>
+<status status="NOT RUN" start="2026-06-05T17:03:45.486378" elapsed="0.000637"/>
+</kw>
+<status status="FAIL" start="2026-06-05T17:03:45.466258" elapsed="0.021671">No keyword with name 'Open Browser' found.</status>
+</test>
+<kw name="Close Browser" type="TEARDOWN">
+<msg time="2026-06-05T17:03:45.496001" level="FAIL">No keyword with name 'Close Browser' found.</msg>
+<status status="FAIL" start="2026-06-05T17:03:45.495317" elapsed="0.003277">No keyword with name 'Close Browser' found.</status>
+</kw>
+<status status="FAIL" start="2026-06-05T17:03:45.450637" elapsed="0.048645">Suite teardown failed:
+No keyword with name 'Close Browser' found.</status>
+</suite>
+<status status="FAIL" start="2026-06-05T17:03:45.446639" elapsed="0.065098"/>
+</suite>
+<status status="FAIL" start="2026-06-05T17:03:45.408681" elapsed="0.105449"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Teste-Software-Bibliotech" id="s1" pass="0" fail="1" skip="0">Teste-Software-Bibliotech</stat>
+<stat name="Verificar Rate Limit" id="s1-s1" pass="0" fail="1" skip="0">Teste-Software-Bibliotech.Verificar Rate Limit</stat>
+<stat name="Verificar Rate Limit" id="s1-s1-s1" pass="0" fail="1" skip="0">Teste-Software-Bibliotech.Verificar Rate Limit.Verificar Rate Limit</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-06-05T17:03:45.453079" level="ERROR">Error in file 'D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech\verificar_rate_limit\verificar_rate_limit.robot' on line 2: Importing library 'SeleniumLibrary' failed: ModuleNotFoundError: No module named 'SeleniumLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech\lib
+  D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech\resources
+  c:\Users\jdeme\.vscode\extensions\d-biehl.robotcode-2.5.1\bundled\libs
+  c:\Users\jdeme\.vscode\extensions\d-biehl.robotcode-2.5.1\bundled\tool\robotcode
+  C:\python314\python314.zip
+  C:\python314\DLLs
+  C:\python314\Lib
+  C:\python314
+  C:\Users\jdeme\AppData\Roaming\Python\Python314\site-packages
+  C:\python314\Lib\site-packages</msg>
+</errors>
+</robot>
