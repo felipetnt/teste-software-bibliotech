@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.5 on win32)" generated="2026-06-08T21:11:17.819405" rpa="false" schemaversion="5">
+<suite id="s1" name="Teste-Software-Bibliotech" source="D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech">
+<suite id="s1-s1" name="testes FelippeCotrim" source="D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech\testes_FelippeCotrim">
+<suite id="s1-s1-s1" name="Protecao Csrf" source="D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech\testes_FelippeCotrim\protecao_csrf">
+<suite id="s1-s1-s1-s1" name="Protecao Csrf" source="D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech\testes_FelippeCotrim\protecao_csrf\protecao_csrf.robot">
+<test id="s1-s1-s1-s1-t1" name="CT-048.1 - Submeter Formulario Sem Token CSRF e Validar Bloqueio" line="12">
+<kw name="Open Browser">
+<msg time="2026-06-08T21:11:17.881367" level="FAIL">No keyword with name 'Open Browser' found.</msg>
+<arg>${URL_PERFIL}</arg>
+<arg>${BROWSER}</arg>
+<status status="FAIL" start="2026-06-08T21:11:17.880728" elapsed="0.005400">No keyword with name 'Open Browser' found.</status>
+</kw>
+<kw name="Maximize Browser Window">
+<status status="NOT RUN" start="2026-06-08T21:11:17.887194" elapsed="0.000772"/>
+</kw>
+<kw name="Execute Javascript">
+<arg>var element = document.getElementById('csrf_token'); if(element) { element.remove(); }</arg>
+<status status="NOT RUN" start="2026-06-08T21:11:17.888929" elapsed="0.001068"/>
+</kw>
+<kw name="Click Element">
+<arg>${BOTAO_SALVAR}</arg>
+<status status="NOT RUN" start="2026-06-08T21:11:17.897293" elapsed="0.001269"/>
+</kw>
+<kw name="Wait Until Element Is Visible">
+<arg>${ALERTA_CSRF}</arg>
+<arg>timeout=5s</arg>
+<status status="NOT RUN" start="2026-06-08T21:11:17.900178" elapsed="0.000955"/>
+</kw>
+<kw name="Element Should Contain">
+<arg>${ALERTA_CSRF}</arg>
+<arg>Acesso Negado: Requisição Inválida ou Forjada.</arg>
+<status status="NOT RUN" start="2026-06-08T21:11:17.902290" elapsed="0.001112"/>
+</kw>
+<kw name="Close Browser" type="TEARDOWN">
+<msg time="2026-06-08T21:11:17.906946" level="FAIL">No keyword with name 'Close Browser' found.</msg>
+<status status="FAIL" start="2026-06-08T21:11:17.906167" elapsed="0.007032">No keyword with name 'Close Browser' found.</status>
+</kw>
+<doc>Simula um ataque removendo o elemento oculto do token da árvore DOM antes do clique.</doc>
+<status status="FAIL" start="2026-06-08T21:11:17.876390" elapsed="0.038135">No keyword with name 'Open Browser' found.
+
+Also teardown failed:
+No keyword with name 'Close Browser' found.</status>
+</test>
+<status status="FAIL" start="2026-06-08T21:11:17.873033" elapsed="0.047868"/>
+</suite>
+<status status="FAIL" start="2026-06-08T21:11:17.870007" elapsed="0.055201"/>
+</suite>
+<status status="FAIL" start="2026-06-08T21:11:17.861688" elapsed="0.067337"/>
+</suite>
+<status status="FAIL" start="2026-06-08T21:11:17.827210" elapsed="0.106394"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Teste-Software-Bibliotech" id="s1" pass="0" fail="1" skip="0">Teste-Software-Bibliotech</stat>
+<stat name="testes FelippeCotrim" id="s1-s1" pass="0" fail="1" skip="0">Teste-Software-Bibliotech.testes FelippeCotrim</stat>
+<stat name="Protecao Csrf" id="s1-s1-s1" pass="0" fail="1" skip="0">Teste-Software-Bibliotech.testes FelippeCotrim.Protecao Csrf</stat>
+<stat name="Protecao Csrf" id="s1-s1-s1-s1" pass="0" fail="1" skip="0">Teste-Software-Bibliotech.testes FelippeCotrim.Protecao Csrf.Protecao Csrf</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-06-08T21:11:17.814312" level="ERROR">Error in file 'D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech\testes_FelippeCotrim\protecao_csrf\protecao_csrf.robot' on line 1: Unrecognized section header '***'. Valid sections: 'Settings', 'Variables', 'Test Cases', 'Tasks', 'Keywords' and 'Comments'.</msg>
+</errors>
+</robot>
