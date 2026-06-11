@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.5 on win32)" generated="2026-06-10T22:41:17.996360" rpa="false" schemaversion="5">
+<suite id="s1" name="Teste-Software-Bibliotech" source="D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech">
+<suite id="s1-s1" name="testes LuizEduardo" source="D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech\testes_LuizEduardo">
+<suite id="s1-s1-s1" name="Pdf Encoding" source="D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech\testes_LuizEduardo\pdf_encoding">
+<suite id="s1-s1-s1-s1" name="Pdf Encoding" source="D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech\testes_LuizEduardo\pdf_encoding\pdf_encoding.robot">
+<test id="s1-s1-s1-s1-t1" name="CT-019.1 - Submeter Dados com Acentuacao Extrema e Validar Geracao PDF" line="13">
+<kw name="Open Browser">
+<msg time="2026-06-10T22:41:18.185821" level="FAIL">No keyword with name 'Open Browser' found.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<status status="FAIL" start="2026-06-10T22:41:18.185137" elapsed="0.009396">No keyword with name 'Open Browser' found.</status>
+</kw>
+<kw name="Maximize Browser Window">
+<status status="NOT RUN" start="2026-06-10T22:41:18.195524" elapsed="0.000676"/>
+</kw>
+<kw name="Input Text">
+<arg>${INPUT_TITULO}</arg>
+<arg>Coleção de Obras de Ação e Gênero Crítico R$ 150,00</arg>
+<status status="NOT RUN" start="2026-06-10T22:41:18.196956" elapsed="0.000509"/>
+</kw>
+<kw name="Click Element">
+<arg>${BOTAO_EXPORT}</arg>
+<status status="NOT RUN" start="2026-06-10T22:41:18.198081" elapsed="0.000701"/>
+</kw>
+<kw name="Wait Until Element Is Visible">
+<arg>${SUCESSO_Aviso}</arg>
+<arg>timeout=5s</arg>
+<status status="NOT RUN" start="2026-06-10T22:41:18.199453" elapsed="0.000530"/>
+</kw>
+<kw name="Page Should Not Contain">
+<arg>Encoding Error</arg>
+<status status="NOT RUN" start="2026-06-10T22:41:18.200617" elapsed="0.000605"/>
+</kw>
+<kw name="Close Browser" type="TEARDOWN">
+<msg time="2026-06-10T22:41:18.203569" level="FAIL">No keyword with name 'Close Browser' found.</msg>
+<status status="FAIL" start="2026-06-10T22:41:18.202881" elapsed="0.009778">No keyword with name 'Close Browser' found.</status>
+</kw>
+<status status="FAIL" start="2026-06-10T22:41:18.172103" elapsed="0.041445">No keyword with name 'Open Browser' found.
+
+Also teardown failed:
+No keyword with name 'Close Browser' found.</status>
+</test>
+<doc>Suíte de automação para checar renderização de caracteres acentuados no PDF.</doc>
+<status status="FAIL" start="2026-06-10T22:41:18.161854" elapsed="0.055357"/>
+</suite>
+<status status="FAIL" start="2026-06-10T22:41:18.156353" elapsed="0.066813"/>
+</suite>
+<status status="FAIL" start="2026-06-10T22:41:18.150440" elapsed="0.079166"/>
+</suite>
+<status status="FAIL" start="2026-06-10T22:41:18.029244" elapsed="0.203384"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Teste-Software-Bibliotech" id="s1" pass="0" fail="1" skip="0">Teste-Software-Bibliotech</stat>
+<stat name="testes LuizEduardo" id="s1-s1" pass="0" fail="1" skip="0">Teste-Software-Bibliotech.testes LuizEduardo</stat>
+<stat name="Pdf Encoding" id="s1-s1-s1" pass="0" fail="1" skip="0">Teste-Software-Bibliotech.testes LuizEduardo.Pdf Encoding</stat>
+<stat name="Pdf Encoding" id="s1-s1-s1-s1" pass="0" fail="1" skip="0">Teste-Software-Bibliotech.testes LuizEduardo.Pdf Encoding.Pdf Encoding</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-06-10T22:41:17.979697" level="ERROR">Error in file 'D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech\testes_FelippeCotrim\protecao_csrf\protecao_csrf.robot' on line 1: Unrecognized section header '***'. Valid sections: 'Settings', 'Variables', 'Test Cases', 'Tasks', 'Keywords' and 'Comments'.</msg>
+<msg time="2026-06-10T22:41:17.981308" level="ERROR">Error in file 'D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech\testes_FelippeCotrim\seguranca_xss\seguranca_xss.robot' on line 1: Unrecognized section header '***'. Valid sections: 'Settings', 'Variables', 'Test Cases', 'Tasks', 'Keywords' and 'Comments'.</msg>
+<msg time="2026-06-10T22:41:18.164448" level="ERROR">Error in file 'D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech\testes_LuizEduardo\pdf_encoding\pdf_encoding.robot' on line 3: Importing library 'SeleniumLibrary' failed: ModuleNotFoundError: No module named 'SeleniumLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech\lib
+  D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech\resources
+  c:\Users\jdeme\.vscode\extensions\d-biehl.robotcode-2.6.0\bundled\libs
+  c:\Users\jdeme\.vscode\extensions\d-biehl.robotcode-2.6.0\bundled\tool\robotcode
+  C:\python314\python314.zip
+  C:\python314\DLLs
+  C:\python314\Lib
+  C:\python314
+  C:\Users\jdeme\AppData\Roaming\Python\Python314\site-packages
+  C:\python314\Lib\site-packages</msg>
+</errors>
+</robot>
