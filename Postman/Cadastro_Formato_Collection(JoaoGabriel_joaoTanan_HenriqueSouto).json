@@ -396,6 +396,40 @@
         }
       },
       "response": []
+    },
+    {
+  "info": {
+    "name": "TESTES DO ARTHUR",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "POST Login - CT03 Acima do Limite",
+      "request": {
+        "method": "POST",
+        "header": [ { "key": "Content-Type", "value": "application/json" } ],
+        "url": { "raw": "http://localhost:8080/login", "host": [ "http://localhost:8080" ], "path": [ "login" ] },
+        "body": { "mode": "raw", "raw": "{\"email\": \"teste@email.com\", \"senha\": \"123456\"}" }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code deve ser 429 após estourar limite\", function () {",
+              "    pm.response.to.have.status(429);",
+              "});",
+              "pm.test(\"Mensagem de erro de Rate Limit\", function () {",
+              "    var json = pm.response.json();",
+              "    pm.expect(json.codigoErro).to.eql(\"RATE_LIMIT_EXCEDIDO\");",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
     }
+  ]
+}
   ]
 }

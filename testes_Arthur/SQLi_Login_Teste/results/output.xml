@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.5 on win32)" generated="2026-06-09T23:37:54.093266" rpa="false" schemaversion="5">
+<suite id="s1" name="SQLi Login Arthur" source="C:\Users\arthu\Desktop\teste-software-bibliotech\testes_Arthur\SQLi_Login_Teste\SQLi_Login_Arthur.robot">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2026-06-09T23:37:54.333289" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5500/login'.</msg>
+<arg>http://localhost:5500/login</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-09T23:37:54.333093" elapsed="0.982018"/>
+</kw>
+<test id="s1-t1" name="CT02 - Tentativa de Bypass de Autenticação com SQLi" line="13">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-09T23:37:55.316945" level="INFO">Typing text 'admin@email.com' OR '1'='1' into text field 'id=email'.</msg>
+<msg time="2026-06-09T23:37:55.369660" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-09T23:37:55.369936" level="FAIL">Element with locator 'id=email' not found.</msg>
+<arg>${INPUT_EMAIL}</arg>
+<arg>admin@email.com' OR '1'='1</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-06-09T23:37:55.316244" elapsed="0.055612">Element with locator 'id=email' not found.</status>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<arg>${INPUT_SENHA}</arg>
+<arg>senha_aleatoria</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-09T23:37:55.372147" elapsed="0.000034"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>${BTN_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-09T23:37:55.372316" elapsed="0.000019"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MSG_ERRO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-06-09T23:37:55.372483" elapsed="0.000030"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>${MSG_ERRO}</arg>
+<arg>Credenciais Inválidas</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2026-06-09T23:37:55.372627" elapsed="0.000021"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<arg>http://localhost:3000/login</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="NOT RUN" start="2026-06-09T23:37:55.372768" elapsed="0.000021"/>
+</kw>
+<status status="FAIL" start="2026-06-09T23:37:55.315425" elapsed="0.057536">Element with locator 'id=email' not found.</status>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-09T23:37:55.373490" elapsed="2.178738"/>
+</kw>
+<status status="FAIL" start="2026-06-09T23:37:54.094792" elapsed="3.457917"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="SQLi Login Arthur" id="s1" pass="0" fail="1" skip="0">SQLi Login Arthur</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

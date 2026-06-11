@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.5 on win32)" generated="2026-06-09T23:38:46.167342" rpa="false" schemaversion="5">
+<suite id="s1" name="XSS Busca Arthur" source="C:\Users\arthu\Desktop\teste-software-bibliotech\testes_Arthur\XSS_Busca_Teste\XSS_Busca_Arthur.robot">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2026-06-09T23:38:46.403966" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/busca'.</msg>
+<msg time="2026-06-09T23:38:49.720377" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-09T23:38:49.720634" level="FAIL">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
+  (Session info: chrome=148.0.7778.217)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff61fc17de5+14895]
+	chromedriver!GetHandleVerifier [0x7ff61fc17e50+14900]
+	chromedriver!(No symbol) [0x7ff61f97d5ad]
+	chromedriver!(No symbol) [0x7ff61f97a0e4]
+	chromedriver!(No symbol) [0x7ff61f96a4c1]
+	chromedriver!(No symbol) [0x7ff61f96c3af]
+	chromedriver!(No symbol) [0x7ff61f96aa63]
+	chromedriver!(No symbol) [0x7ff61f96a22b]
+	chromedriver!(No symbol) [0x7ff61f969ee1]
+	chromedriver!(No symbol) [0x7ff61f967b11]
+	chromedriver!(No symbol) [0x7ff61f968272]
+	chromedriver!(No symbol) [0x7ff61f981866]
+	chromedriver!(No symbol) [0x7ff61fa256c4]
+	chromedriver!(No symbol) [0x7ff61fa0005a]
+	chromedriver!(No symbol) [0x7ff61fa2486f]
+	chromedriver!(No symbol) [0x7ff61f9c9df8]
+	chromedriver!(No symbol) [0x7ff61f9cace3]
+	chromedriver!GetHandleVerifier [0x7ff61ff2cc49+3296f9]
+	chromedriver!GetHandleVerifier [0x7ff61ff27375+323e25]
+	chromedriver!GetHandleVerifier [0x7ff61ff4bc82+348732]
+	chromedriver!GetHandleVerifier [0x7ff61fc36045+32af5]
+	chromedriver!GetHandleVerifier [0x7ff61fc3ecec+3b79c]
+	chromedriver!GetHandleVerifier [0x7ff61fc21bc4+1e674]
+	chromedriver!GetHandleVerifier [0x7ff61fc21d54+1e804]
+	chromedriver!GetHandleVerifier [0x7ff61fc060e7+2b97]
+	KERNEL32!BaseThreadInitThunk [0x7ffa82e0e957+17]
+	ntdll!RtlUserThreadStart [0x7ffa84c67c1c+2c]
+</msg>
+<arg>http://localhost:3000/busca</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="FAIL" start="2026-06-09T23:38:46.403770" elapsed="3.319715">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
+  (Session info: chrome=148.0.7778.217)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff61fc17de5+14895]
+	chromedriver!GetHandleVerifier [0x7ff61fc17e50+14900]
+	chromedriver!(No symbol) [0x7ff61f97d5ad]
+	chromedriver!(No symbol) [0x7ff61f97a0e4]
+	chromedriver!(No symbol) [0x7ff61f96a4c1]
+	chromedriver!(No symbol) [0x7ff61f96c3af]
+	chromedriver!(No symbol) [0x7ff61f96aa63]
+	chromedriver!(No symbol) [0x7ff61f96a22b]
+	chromedriver!(No symbol) [0x7ff61f969ee1]
+	chromedriver!(No symbol) [0x7ff61f967b11]
+	chromedriver!(No symbol) [0x7ff61f968272]
+	chromedriver!(No symbol) [0x7ff61f981866]
+	chromedriver!(No symbol) [0x7ff61fa256c4]
+	chromedriver!(No symbol) [0x7ff61fa0005a]
+	chromedriver!(No symbol) [0x7ff61fa2486f]
+	chromedriver!(No symbol) [0x7ff61f9c9df8]
+	chromedriver!(No symbol) [0x7ff61f9cace3]
+	chromedriver!GetHandleVerifier [0x7ff61ff2cc49+3296f9]
+	chromedriver!GetHandleVerifier [0x7ff61ff27375+323e25]
+	chromedriver!GetHandleVerifier [0x7ff61ff4bc82+348732]
+	chromedriver!GetHandleVerifier [0x7ff61fc36045+32af5]
+	chromedriver!GetHandleVerifier [0x7ff61fc3ecec+3b79c]
+	chromedriver!GetHandleVerifier [0x7ff61fc21bc4+1e674]
+	chromedriver!GetHandleVerifier [0x7ff61fc21d54+1e804]
+	chromedriver!GetHandleVerifier [0x7ff61fc060e7+2b97]
+	KERNEL32!BaseThreadInitThunk [0x7ffa82e0e957+17]
+	ntdll!RtlUserThreadStart [0x7ffa84c67c1c+2c]
+</status>
+</kw>
+<test id="s1-t1" name="CT01 - Tentativa de injeção XSS no campo de busca" line="12">
+<status status="FAIL" start="2026-06-09T23:38:49.723707" elapsed="0.000464">Parent suite setup failed:
+WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
+  (Session info: chrome=148.0.7778.217)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff61fc17de5+14895]
+	chromedriver!GetHandleVerifier [0x7ff61fc17e50+14900]
+	chromedriver!(No symbol) [0x7ff61f97d5ad]
+	chromedriver!(No symbol) [0x7ff61f97a0e4]
+	chromedriver!(No symbol) [0x7ff61f96a4c1]
+	chromedriver!(No symbol) [0x7ff61f96c3af]
+	chromedriver!(No symbol) [0x7ff61f96aa63]
+	chromedriver!(No symbol) [0x7ff61f96a22b]
+	chromedriver!(No symbol) [0x7ff61f969ee1]
+	chromedriver!(No symbol) [0x7ff61f967b11]
+	chromedriver!(No symbol) [0x7ff61f968272]
+	chromedriver!(No symbol) [0x7ff61f981866]
+	chromedriver!(No symbol) [0x7ff61fa256c4]
+	chromedriver!(No symbol) [0x7ff61fa0005a]
+	chromedriver!(No symbol) [0x7ff61fa2486f]
+	chromedriver!(No symbol) [0x7ff61f9c9df8]
+	chromedriver!(No symbol) [0x7ff61f9cace3]
+	chromedriver!GetHandleVerifier [0x7ff61ff2cc49+3296f9]
+	chromedriver!GetHandleVerifier [0x7ff61ff27375+323e25]
+	chromedriver!GetHandleVerifier [0x7ff61ff4bc82+348732]
+	chromedriver!GetHandleVerifier [0x7ff61fc36045+32af5]
+	chromedriver!GetHandleVerifier [0x7ff61fc3ecec+3b79c]
+	chromedriver!GetHandleVerifier [0x7ff61fc21bc4+1e674]
+	chromedriver!GetHandleVerifier [0x7ff61fc21d54+1e804]
+	chromedriver!GetHandleVerifier [0x7ff61fc060e7+2b97]
+	KERNEL32!BaseThreadInitThunk [0x7ffa82e0e957+17]
+	ntdll!RtlUserThreadStart [0x7ffa84c67c1c+2c]
+</status>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-09T23:38:49.724845" elapsed="2.123020"/>
+</kw>
+<status status="FAIL" start="2026-06-09T23:38:46.168710" elapsed="5.679348">Suite setup failed:
+WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
+  (Session info: chrome=148.0.7778.217)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff61fc17de5+14895]
+	chromedriver!GetHandleVerifier [0x7ff61fc17e50+14900]
+	chromedriver!(No symbol) [0x7ff61f97d5ad]
+	chromedriver!(No symbol) [0x7ff61f97a0e4]
+	chromedriver!(No symbol) [0x7ff61f96a4c1]
+	chromedriver!(No symbol) [0x7ff61f96c3af]
+	chromedriver!(No symbol) [0x7ff61f96aa63]
+	chromedriver!(No symbol) [0x7ff61f96a22b]
+	chromedriver!(No symbol) [0x7ff61f969ee1]
+	chromedriver!(No symbol) [0x7ff61f967b11]
+	chromedriver!(No symbol) [0x7ff61f968272]
+	chromedriver!(No symbol) [0x7ff61f981866]
+	chromedriver!(No symbol) [0x7ff61fa256c4]
+	chromedriver!(No symbol) [0x7ff61fa0005a]
+	chromedriver!(No symbol) [0x7ff61fa2486f]
+	chromedriver!(No symbol) [0x7ff61f9c9df8]
+	chromedriver!(No symbol) [0x7ff61f9cace3]
+	chromedriver!GetHandleVerifier [0x7ff61ff2cc49+3296f9]
+	chromedriver!GetHandleVerifier [0x7ff61ff27375+323e25]
+	chromedriver!GetHandleVerifier [0x7ff61ff4bc82+348732]
+	chromedriver!GetHandleVerifier [0x7ff61fc36045+32af5]
+	chromedriver!GetHandleVerifier [0x7ff61fc3ecec+3b79c]
+	chromedriver!GetHandleVerifier [0x7ff61fc21bc4+1e674]
+	chromedriver!GetHandleVerifier [0x7ff61fc21d54+1e804]
+	chromedriver!GetHandleVerifier [0x7ff61fc060e7+2b97]
+	KERNEL32!BaseThreadInitThunk [0x7ffa82e0e957+17]
+	ntdll!RtlUserThreadStart [0x7ffa84c67c1c+2c]
+</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="XSS Busca Arthur" id="s1" pass="0" fail="1" skip="0">XSS Busca Arthur</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
