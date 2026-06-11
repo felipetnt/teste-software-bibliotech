@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.5 on win32)" generated="2026-06-10T22:39:39.461957" rpa="false" schemaversion="5">
+<suite id="s1" name="Teste-Software-Bibliotech" source="D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech">
+<suite id="s1-s1" name="testes LuizEduardo" source="D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech\testes_LuizEduardo">
+<suite id="s1-s1-s1" name="Campos Nulos Relatorio" source="D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech\testes_LuizEduardo\campos_nulos_relatorio">
+<suite id="s1-s1-s1-s1" name="Campos Nulos Relatorio" source="D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech\testes_LuizEduardo\campos_nulos_relatorio\campos_nulos_relatorio.robot">
+<test id="s1-s1-s1-s1-t1" name="CT-035.1 - Carregar Acervo com Livros Sem Editora e Validar Tratamento Estavel" line="12">
+<kw name="Open Browser">
+<msg time="2026-06-10T22:39:39.667559" level="FAIL">No keyword with name 'Open Browser' found.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<status status="FAIL" start="2026-06-10T22:39:39.666365" elapsed="0.005620">No keyword with name 'Open Browser' found.</status>
+</kw>
+<kw name="Wait Until Element Is Visible">
+<arg>${TABELA_RESULT}</arg>
+<arg>timeout=5s</arg>
+<status status="NOT RUN" start="2026-06-10T22:39:39.673775" elapsed="0.001180"/>
+</kw>
+<kw name="Element Text Should Be">
+<arg>${CELULA_NULA}</arg>
+<arg>—</arg>
+<status status="NOT RUN" start="2026-06-10T22:39:39.675900" elapsed="0.000742"/>
+</kw>
+<kw name="Page Should Not Contain">
+<arg>NullPointerException</arg>
+<status status="NOT RUN" start="2026-06-10T22:39:39.677420" elapsed="0.000739"/>
+</kw>
+<kw name="Close Browser" type="TEARDOWN">
+<msg time="2026-06-10T22:39:39.680430" level="FAIL">No keyword with name 'Close Browser' found.</msg>
+<status status="FAIL" start="2026-06-10T22:39:39.679750" elapsed="0.003507">No keyword with name 'Close Browser' found.</status>
+</kw>
+<status status="FAIL" start="2026-06-10T22:39:39.662296" elapsed="0.021800">No keyword with name 'Open Browser' found.
+
+Also teardown failed:
+No keyword with name 'Close Browser' found.</status>
+</test>
+<doc>Suíte para garantir que registros nulos não geram quebra ou exceções na UI.</doc>
+<status status="FAIL" start="2026-06-10T22:39:39.645334" elapsed="0.042026"/>
+</suite>
+<status status="FAIL" start="2026-06-10T22:39:39.639667" elapsed="0.053365"/>
+</suite>
+<status status="FAIL" start="2026-06-10T22:39:39.632241" elapsed="0.064242"/>
+</suite>
+<status status="FAIL" start="2026-06-10T22:39:39.590662" elapsed="0.108306"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Teste-Software-Bibliotech" id="s1" pass="0" fail="1" skip="0">Teste-Software-Bibliotech</stat>
+<stat name="testes LuizEduardo" id="s1-s1" pass="0" fail="1" skip="0">Teste-Software-Bibliotech.testes LuizEduardo</stat>
+<stat name="Campos Nulos Relatorio" id="s1-s1-s1" pass="0" fail="1" skip="0">Teste-Software-Bibliotech.testes LuizEduardo.Campos Nulos Relatorio</stat>
+<stat name="Campos Nulos Relatorio" id="s1-s1-s1-s1" pass="0" fail="1" skip="0">Teste-Software-Bibliotech.testes LuizEduardo.Campos Nulos Relatorio.Campos Nulos Relatorio</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-06-10T22:39:39.367527" level="ERROR">Error in file 'D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech\testes_FelippeCotrim\protecao_csrf\protecao_csrf.robot' on line 1: Unrecognized section header '***'. Valid sections: 'Settings', 'Variables', 'Test Cases', 'Tasks', 'Keywords' and 'Comments'.</msg>
+<msg time="2026-06-10T22:39:39.378376" level="ERROR">Error in file 'D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech\testes_FelippeCotrim\seguranca_xss\seguranca_xss.robot' on line 1: Unrecognized section header '***'. Valid sections: 'Settings', 'Variables', 'Test Cases', 'Tasks', 'Keywords' and 'Comments'.</msg>
+<msg time="2026-06-10T22:39:39.648808" level="ERROR">Error in file 'D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech\testes_LuizEduardo\campos_nulos_relatorio\campos_nulos_relatorio.robot' on line 3: Importing library 'SeleniumLibrary' failed: ModuleNotFoundError: No module named 'SeleniumLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech\lib
+  D:\Faculdade\Repositorios\teste_software\teste-software-bibliotech\resources
+  c:\Users\jdeme\.vscode\extensions\d-biehl.robotcode-2.6.0\bundled\libs
+  c:\Users\jdeme\.vscode\extensions\d-biehl.robotcode-2.6.0\bundled\tool\robotcode
+  C:\python314\python314.zip
+  C:\python314\DLLs
+  C:\python314\Lib
+  C:\python314
+  C:\Users\jdeme\AppData\Roaming\Python\Python314\site-packages
+  C:\python314\Lib\site-packages</msg>
+</errors>
+</robot>
