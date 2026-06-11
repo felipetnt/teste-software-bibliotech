@@ -13,7 +13,6 @@ CT-048.1 - Submeter Formulario Sem Token CSRF e Validar Bloqueio
     [Documentation]    Simula um ataque removendo o elemento oculto do token da árvore DOM antes do clique.
     Open Browser    ${URL_PERFIL}    ${BROWSER}
     Maximize Browser Window
-    # Remove o input hidden do token CSRF via execução de JavaScript para emular o ataque
     Execute Javascript    var element = document.getElementById('csrf_token'); if(element) { element.remove(); }
     Click Element   ${BOTAO_SALVAR}
     Wait Until Element Is Visible    ${ALERTA_CSRF}    timeout=5s
