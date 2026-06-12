@@ -430,7 +430,7 @@
       ]
     }
   ]
-}
+    }
   ]
 },
 {
@@ -494,6 +494,435 @@
         }
       },
       "response": []
+    }
+  ]
+},
+{
+  "info": {
+    "_postman_id": "e7f9080c-5364-47ce-8879-0666a8c77843",
+    "name": "Teste de API - Login",
+    "description": "Coleção para testes de API do endpoint de login utilizando a técnica de Particionamento de Equivalência. Os casos de teste cobrem as partições de email inválido (P1), senha inválida (P2), credenciais válidas (P3) e credenciais não encontradas (P4).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54656879",
+    "_collection_link": "https://go.postman.co/collection/54656879-e7f9080c-5364-47ce-8879-0666a8c77843?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "POST /login - Particionamento de Equivalência",
+      "item": [
+        {
+          "name": "CT01 - Login com credenciais válidas",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code deve ser 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Login realizado com sucesso\", function () {",
+                  "    var json = pm.response.json();",
+                  "    pm.expect(json.mensagem).to.eql(\"Login realizado com sucesso\");",
+                  "});",
+                  "",
+                  "pm.test(\"Token retornado\", function () {",
+                  "    var json = pm.response.json();",
+                  "    pm.expect(json.dados).to.have.property(\"token\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"usuario@email.com\",\n  \"senha\": \"12345678\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "login"
+              ]
+            },
+            "description": "CT01 — Partição P3 (Credenciais válidas): Email e senha corretos. Resultado esperado: 200 — Login realizado com sucesso."
+          },
+          "response": [
+            {
+              "name": "200 - Login realizado com sucesso",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"usuario@email.com\",\n  \"senha\": \"12345678\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/login",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "login"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "enabled": true
+                }
+              ],
+              "cookie": [],
+              "body": "{\\n  \"status\": \"sucesso\",\\n  \"mensagem\": \"Login realizado com sucesso\",\\n  \"dados\": {\\n    \"idUsuario\": \"a1b2c3d4\",\\n    \"email\": \"usuario@email.com\",\\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...\",\\n    \"expiracao\": \"2026-06-11T12:00:00Z\"\\n  }\\n}"
+            }
+          ]
+        },
+        {
+          "name": "CT02 - Email inválido (sem @)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code deve ser 400\", function () {",
+                  "    pm.response.to.have.status(400);",
+                  "});",
+                  "",
+                  "pm.test(\"Mensagem de erro de email inválido\", function () {",
+                  "    var json = pm.response.json();",
+                  "    pm.expect(json.mensagem).to.eql(\"Email inválido\");",
+                  "});",
+                  "",
+                  "pm.test(\"Código de erro correto\", function () {",
+                  "    var json = pm.response.json();",
+                  "    pm.expect(json.codigoErro).to.eql(\"EMAIL_INVALIDO\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"usuarioemail.com\",\n  \"senha\": \"12345678\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "login"
+              ]
+            },
+            "description": "CT02 — Partição P1 (Email inválido): Email sem o caractere @. Resultado esperado: 400 — Email inválido."
+          },
+          "response": [
+            {
+              "name": "400 - Email inválido",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"usuarioemail.com\",\n  \"senha\": \"12345678\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/login",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "login"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "enabled": true
+                }
+              ],
+              "cookie": [],
+              "body": "{\\n  \"status\": \"erro\",\\n  \"mensagem\": \"Email inválido\",\\n  \"codigoErro\": \"EMAIL_INVALIDO\",\\n  \"timestamp\": \"2026-06-11T02:38:17Z\"\\n}"
+            }
+          ]
+        },
+        {
+          "name": "CT03 - Senha inválida (muito curta)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code deve ser 400\", function () {",
+                  "    pm.response.to.have.status(400);",
+                  "});",
+                  "",
+                  "pm.test(\"Mensagem de erro de senha inválida\", function () {",
+                  "    var json = pm.response.json();",
+                  "    pm.expect(json.mensagem).to.eql(\"Senha inválida\");",
+                  "});",
+                  "",
+                  "pm.test(\"Código de erro correto\", function () {",
+                  "    var json = pm.response.json();",
+                  "    pm.expect(json.codigoErro).to.eql(\"SENHA_INVALIDA\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"usuario@email.com\",\n  \"senha\": \"123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "login"
+              ]
+            },
+            "description": "CT03 — Partição P2 (Senha inválida): Senha com menos de 8 caracteres. Resultado esperado: 400 — Senha inválida."
+          },
+          "response": [
+            {
+              "name": "400 - Senha inválida",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"usuario@email.com\",\n  \"senha\": \"123\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/login",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "login"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "enabled": true
+                }
+              ],
+              "cookie": [],
+              "body": "{\\n  \"status\": \"erro\",\\n  \"mensagem\": \"Senha inválida\",\\n  \"codigoErro\": \"SENHA_INVALIDA\",\\n  \"timestamp\": \"2026-06-11T02:38:17Z\"\\n}"
+            }
+          ]
+        },
+        {
+          "name": "CT04 - Credenciais não encontradas",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code deve ser 401\", function () {",
+                  "    pm.response.to.have.status(401);",
+                  "});",
+                  "",
+                  "pm.test(\"Mensagem de credenciais inválidas\", function () {",
+                  "    var json = pm.response.json();",
+                  "    pm.expect(json.mensagem).to.eql(\"Credenciais inválidas\");",
+                  "});",
+                  "",
+                  "pm.test(\"Código de erro correto\", function () {",
+                  "    var json = pm.response.json();",
+                  "    pm.expect(json.codigoErro).to.eql(\"CREDENCIAIS_INVALIDAS\");",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"naoexiste@email.com\",\n  \"senha\": \"12345678\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "login"
+              ]
+            },
+            "description": "CT04 — Partição P4 (Credenciais não encontradas): Email não cadastrado no sistema. Resultado esperado: 401 — Credenciais inválidas."
+          },
+          "response": [
+            {
+              "name": "401 - Credenciais inválidas",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"naoexiste@email.com\",\n  \"senha\": \"12345678\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/login",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "login"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "enabled": true
+                }
+              ],
+              "cookie": [],
+              "body": "{\\n  \"status\": \"erro\",\\n  \"mensagem\": \"Credenciais inválidas\",\\n  \"codigoErro\": \"CREDENCIAIS_INVALIDAS\",\\n  \"timestamp\": \"2026-06-11T02:38:17Z\"\\n}"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
